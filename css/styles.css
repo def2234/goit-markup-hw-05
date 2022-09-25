@@ -17,6 +17,7 @@
   --icon-color: #afb1b8;
   --header-border-color: #ececec;
   --secondary-link-color: rgba(255, 255, 255, 0.6);
+  --fill-svg-color: #000000;
 }
 
 .container {
@@ -102,6 +103,19 @@ body {
   opacity: 1;
 } */
 
+.after-line::after {
+  position: absolute;
+
+  content: '';
+  width: 100%;
+  height: 4px;
+  bottom: 0;
+
+  background: var(--accent-text-color);
+
+  border-radius: 2px;
+}
+
 .nav-color {
   color: var(--secondary-text-color);
 }
@@ -131,29 +145,17 @@ body {
   padding-bottom: 32px;
 
   text-decoration: none;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .site-nav .link:hover,
 .site-nav .link:focus {
   color: var(--accent-text-color);
-  transition: cubic-bezier(0.4, 0, 0.2, 1) 250ms;
 }
 
 .site-nav .studio-link {
   color: var(--accent-text-color);
-}
-
-.after-line::after {
-  position: absolute;
-
-  content: '';
-  width: 100%;
-  height: 4px;
-  transform: translateY(-3px);
-
-  background: var(--accent-text-color);
-
-  border-radius: 2px;
 }
 
 .site-nav .portfolio-link {
@@ -187,6 +189,8 @@ body {
   align-items: center;
 
   text-decoration: none;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .auth-nav .item + .item {
@@ -196,7 +200,6 @@ body {
 .auth-nav .link:hover,
 .auth-nav .link:focus {
   color: var(--accent-text-color);
-  transition: cubic-bezier(0.4, 0, 0.2, 1) 250ms;
 }
 
 .mail-icon {
@@ -204,6 +207,8 @@ body {
   height: 12px;
   margin-right: 10px;
   fill: currentColor;
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .mob-icon {
@@ -211,16 +216,16 @@ body {
   height: 16px;
   margin-right: 10px;
   fill: currentColor;
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .link-mob:hover svg {
   fill: var(--accent-text-color);
-  transition: cubic-bezier(0.4, 0, 0.2, 1) 250ms;
 }
 
 .link-mail:hover svg {
   fill: var(--accent-text-color);
-  transition: cubic-bezier(0.4, 0, 0.2, 1) 250ms;
 }
 
 /* section */
@@ -279,13 +284,14 @@ body {
   padding: 10px 32px;
 
   border: none;
+
+  transition: background-color 250ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button-title:hover,
 .button-title:focus {
   background: var(--accent-text-color);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
-  transition: cubic-bezier(0.4, 0, 0.2, 1) 250ms;
 }
 
 /* modal window */
@@ -328,24 +334,24 @@ body {
   background: var(--primary-background-color);
   border: none;
   border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
 
   position: absolute;
   top: 8px;
   right: 8px;
 
   cursor: pointer;
+
+  transition: background-color 250ms, border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-button:hover,
 .modal-button:focus {
   background: var(--primary-background-color);
-
-  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .icon-modal {
-  width: 11px;
-  height: 11px;
+  fill: var(--fill-svg-color);
 }
 
 /* Portfolio buttons */
@@ -362,6 +368,8 @@ body {
   padding: 6px 22px;
   border-radius: 4px;
   border: none;
+
+  transition: color 250ms, background-color 250ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button-filter:hover,
@@ -370,7 +378,6 @@ body {
   background-color: var(--accent-text-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
-  transition: cubic-bezier(0.4, 0, 0.2, 1) 250ms;
 }
 
 /* advantages */
@@ -481,6 +488,7 @@ body {
   font-size: 14px;
   line-height: 1.14;
   text-align: center;
+  text-transform: uppercase;
   color: var(--primary-background-color);
 }
 
@@ -561,15 +569,13 @@ body {
 
   display: flex;
   justify-content: center;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-links:hover,
 .social-links:focus {
-  border-radius: 50%;
-  width: 44px;
-  height: 44px;
   background: var(--accent-text-color);
-  transition: cubic-bezier(0.4, 0, 0.2, 1) 250ms;
 }
 
 .social-links:hover svg,
@@ -600,6 +606,8 @@ body {
   justify-content: center;
 
   display: flex;
+
+  transition: fill 250ms, border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .icon-partners {
@@ -611,8 +619,6 @@ body {
 .partners-links:focus {
   fill: var(--accent-text-color);
   border: 1px solid var(--accent-text-color);
-  border-radius: 4px;
-  transition: cubic-bezier(0.4, 0, 0.2, 1) 250ms;
 }
 
 /* address */
@@ -650,6 +656,8 @@ body {
   letter-spacing: 0.03em;
 
   text-decoration: none;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .address-list .address-link + .address-link {
@@ -663,7 +671,6 @@ body {
 .address-list .link:hover,
 .address-list .link:focus {
   color: var(--primary-background-color);
-  transition: cubic-bezier(0.4, 0, 0.2, 1) 250ms;
 }
 
 .address-color {
@@ -787,12 +794,13 @@ body {
   color: var(--primary-text-color);
   display: block;
   background: var(--primary-background-color);
+
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .list-link:hover {
   box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px 0px rgba(0, 0, 0, 0.06),
     0px 1px 1px 0px rgba(0, 0, 0, 0.12);
-  transition: cubic-bezier(0.4, 0, 0.2, 1) 250ms;
 }
 
 /* work-img */
